@@ -16,4 +16,9 @@ $(function() {
 		return false;
 	});
 
+	$(".main-menu ul li").on("click", function() {
+		$(".main-menu ul li").removeClass("active");
+		$(this).addClass("active");
+	});
+
 });

@@ -39,6 +39,34 @@ body
 	background-color: #fff
 	background-attachment: fixed
 
+h1
+	font-weight: 30px
+	text-align: center
+	color: #444444
+	padding: 50px 0
+	margin: 0
+
+h2
+	font-size: 22px
+	line-height: 22px
+	font-weight: bold
+	color: #444444
+	margin: 0
+	margin-bottom: 10px
+
+h3
+	margin-top: 0
+	line-height: 16px
+	font-size: 16px
+	a
+		color: $blue
+		font-weight: bold
+		&:hover
+			text-decoration: none
+
+.no-padding
+	padding: 0
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -258,6 +286,64 @@ body
 					&:before
 						border-top-color: $blue
 
+.section-top
+	.section-wrap
+		background-color: #fff
+		.player-wrap
+			background-color: #000
+			height: 110px
+		.news-string
+			font-size: 14px
+			line-height: 38px
+			border-bottom: 1px solid #e8e8e8
+			color: #444444
+			padding: 0 30px
+			span
+				color: #b0b0b0
+		.camera-wrap
+			padding: 30px 0 0 30px
+			img
+				width: 100% /* Временно! Убрать! */
+			.camera-title
+				p
+					padding-top: 10px
+					padding-bottom: 20px
+					font-size: 16px
+					line-height: 16px
+					font-weight: bold
+					color: #444444
+					margin: 0
+					display: inline-block
+					margin-right: 10px
+				span
+					font-weight: normal
+					font-size: 12px
+					color: #b0b0b0
+		.play-list
+			padding-right: 30px
+			padding-bottom: 50px
+			.songs
+				.song
+					font-size: 14px
+					color: #b0b0b0
+					white-space: nowrap
+					overflow: hidden
+					span
+						font-weight: bold
+						color: $blue
+				.listen
+					span
+						color: #b0b0b0
+				.current
+					background-color: $blue
+					color: #fff
+					padding: 0 10px
+					.play-icon
+						font-size: 12px
+						margin-right: 5px
+					span
+						color: #fff
+
 .section-middle
 	.form-question
 		background-color: $red
@@ -292,6 +378,58 @@ body
 				transition: all .25s ease
 				&:hover
 					opacity: .9
+
+.section-bottom
+	.section-wrap
+		background-color: #fff
+		padding: 30px 30px
+		.news-wrapper
+			h2
+				margin-bottom: 20px
+			.news
+				margin-bottom: 30px
+				p
+					margin: 0
+					padding: 0
+					font-size: 14px
+					color: #b0b0b0
+					line-height: 19px
+				.news-time
+					font-size: 12px
+					color: #b0b0b0
+					.icon-time
+						margin-right: 5px
+						font-size: 16px
+			.button-wrap
+				margin-bottom: 30px
+				.button
+					color: $blue
+					font-size: 14px
+					text-decoration: underline
+		.progs-wrapper
+			h2
+				margin-bottom: 20px
+			.prog
+				margin-bottom: 20px
+				.top-sect
+					height: 25px
+					.title
+						color: $blue
+						font-size: 14px
+						line-height: 25px
+						float: left
+					.time
+						float: right
+						color: #444444
+						font-size: 12px
+						line-height: 25px
+				.content-sect
+					height: 26px
+					background-color: #000
+					width: 100%
+		.rekl-wrap
+			margin-bottom: 30px
+
 
 .main-footer
 	background-color: #e8e8e8
@@ -342,6 +480,99 @@ body
 		text-align: right
 		font-size: 14px
 		color: #9e9e9e
+
+/********** О нас **********/
+
+.section-onas
+	.section-wrap
+		background-color: #fff
+		.img-wrap
+			max-width: 100%
+			max-height: 315px
+			overflow: hidden
+		.about-text
+			font-weight: 200
+			color: #444444
+			font-size: 14px
+			padding: 30px 30px
+			margin: 0
+
+/********** Ведущие **********/
+
+.section-vedushie
+	.section-wrap
+		background-color: #FFF
+		padding: 30px 30px
+		.item
+			margin-bottom: 40px
+			.ava-wrap
+				width: 185px
+				height: 185px
+				overflow: hidden
+				border-radius: 10em
+				margin: auto
+				img
+					max-width: 185px
+					//height: auto
+					height: 100% /* Временно убрать! */
+			.name
+				margin: 0
+				font-size: 16px
+				font-weight: bold
+				color: #444444
+				text-align: center
+				line-height: 45px
+			.descr
+				margin: 0
+				font-size: 14px
+				line-height: 19px
+				color: #a3a2a2
+				text-align: center
+				max-width: 180px
+				margin: auto
+
+/********** Видео галерея **********/
+
+.section-galereya
+	.section-wrap
+		background-color: #FFF
+		padding: 30px 30px
+		.video-wrap
+			padding-bottom: 40px
+			a
+				display: block
+				text-decoration: none
+				.img-wrap
+					width: 100%
+					max-height: 150px
+					overflow: hidden
+					position: relative
+					margin-bottom: 15px
+					img
+						width: 100%
+						height: auto
+					.play-icon
+						background-image: url("/img/play-icon.png")
+						width: 42px
+						height: 42px
+						display: block
+						position: absolute
+						top: calc(50% - 21px)
+						left: calc(50% - 21px)
+						z-index: 2
+					.bgc
+						position: absolute
+						width: 100%
+						height: 100%
+						top: 0
+						left: 0
+						background-color: rgba(0,0,0, .5)
+				.title
+					color: #444444
+					font-size: 14px
+					font-weight: bold
+					line-height: 19px
+					margin: 0
 
 
 @import "media" // Всегда в конце
