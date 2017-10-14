@@ -10,6 +10,12 @@ $(function() {
 		fortField: 'text'
 	});
 
+	$('.cat-filter').selectize({
+		create: true,
+		fortField: 'text',
+		placeholder: 'Рубрика'
+	});
+
 	$(".toggle-menu").on("click", function() {
 		$(this).toggleClass("on");
 		$(".toggle-mobile-menu").slideToggle();
