@@ -1,10 +1,12 @@
 $(function() {
+	$( 'audio' ).audioPlayer(
+	{
+		classPrefix: 'audioplayer', // default value: 'audioplayer'
+		strPlay: 'Play', // default value: 'Play'
+		strPause: 'Pause', // default value: 'Pause'
+		strVolume: 'Volume', // default value: 'Volume'
+	});
 
-	/* 
-	==============================
-	Custom Select "Selectize"
-	============================== 
-	*/
 	$('.city-filter').selectize({
 		create: true,
 		fortField: 'text'
@@ -25,6 +27,10 @@ $(function() {
 	$(".main-menu ul li").on("click", function() {
 		$(".main-menu ul li").removeClass("active");
 		$(this).addClass("active");
+	});
+
+	$(".audioplayer-volume-button").on("click", function() {
+		$(this).toggleClass("off");
 	});
 
 });

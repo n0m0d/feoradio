@@ -96,8 +96,89 @@ h3
 		&:hover
 			text-decoration: none
 
-.no-padding
-	padding: 0
+.audioplayer
+	position: relative
+	height: 58px
+	&-playpause
+		background-repeat: no-repeat
+		width: 58px
+		height: 58px
+		cursor: pointer
+		position: absolute
+		top: 0
+		left: 0
+		a
+			font-size: 0
+	.audioplayer-time-duration
+		display: none
+	.audioplayer-time-current
+		color: #fff
+		font-size: 12px
+		line-height: 12px
+		position: absolute
+		left: 350px
+		top: calc(50% - 6px)
+	&-bar
+		width: 260px
+		height: 2px
+		display: inline-block
+		background-color: rgba(255,255,255, .5)
+		cursor: pointer
+		position: absolute
+		left: 78px
+		top: calc(50% - 1px)
+		&-played
+			height: 2px
+			background-color: #FFF
+		&-handler
+			width: 8px
+			height: 8px
+			background-color: #FFF
+			border-radius: .5em
+			position: absolute
+			top: calc(50% - 4px)
+	&-volume
+		cursor: pointer
+		&-button
+			position: absolute
+			left: 390px
+			top: calc(50% - 7px)
+			width: 16px
+			height: 14px
+			background-image: url("/img/sound-on.png")
+			a
+				font-size: 0
+		.off
+			background-image: url("/img/sound-off.png")
+			height: 16px
+			top: calc(50% - 8px)
+		&-adjust
+			position: absolute
+			left: 416px
+			top: calc(50% - 1px)
+			width: 40px
+			height: 2px
+			background-color: rgba(255,255,255, .5)
+			div
+				height: 2px
+				background-color: rgba(255,255,255, .5)
+				div
+					height: 2px
+					background-color: #fff
+				.volumeHandler
+					width: 8px
+					height: 8px
+					background-color: #FFF
+					border-radius: .5em
+					position: absolute
+					top: calc(50% - 4px)
+
+.audioplayer-stopped
+	.audioplayer-playpause
+		background-image: url("/img/play.png")
+.audioplayer-playing
+	.audioplayer-playpause
+		background-image: url("/img/pause.png")
 
 .img-responsive
 	display: block
@@ -324,6 +405,24 @@ h3
 		.player-wrap
 			background-color: #000
 			height: 110px
+			background-image: url("/img/player-bg.jpg")
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+			padding: 25px 30px
+			position: relative
+			.current-sont
+				color: #fff
+				font-size: 16px
+				position: absolute
+				top: 20px
+				left: 105px
+			.next-song
+				color: #a6a7a6
+				font-size: 12px
+				position: absolute
+				bottom: 25px
+				left: 105px
 		.news-string
 			font-size: 14px
 			line-height: 38px
