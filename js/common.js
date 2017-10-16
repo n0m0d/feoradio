@@ -1,10 +1,19 @@
 $(function() {
-	$( 'audio' ).audioPlayer(
+
+	$('.main-radio').audioPlayer(
 	{
-		classPrefix: 'audioplayer', // default value: 'audioplayer'
-		strPlay: 'Play', // default value: 'Play'
-		strPause: 'Pause', // default value: 'Pause'
-		strVolume: 'Volume', // default value: 'Volume'
+		classPrefix: 'main-player',
+		strPlay: 'Пуск',
+		strPause: 'Пауза',
+		strVolume: 'Звук',
+	});
+
+	$('.mini-radio').audioPlayer(
+	{
+		classPrefix: 'mini-player',
+		strPlay: 'Пуск',
+		strPause: 'Пауза',
+		strVolume: 'Звук',
 	});
 
 	$('.city-filter').selectize({
@@ -29,7 +38,11 @@ $(function() {
 		$(this).addClass("active");
 	});
 
-	$(".audioplayer-volume-button").on("click", function() {
+	$(".main-player-volume-button").on("click", function() {
+		$(this).toggleClass("off");
+	});
+
+	$(".mini-player-volume-button").on("click", function() {
 		$(this).toggleClass("off");
 	});
 

@@ -34,6 +34,24 @@
 				img
 					display: inline-block
 
+	.section-arhiv
+		.section-wrap
+			.audio-wrapper
+				.audio
+					.content-sect
+						.mini-player
+							&-bar
+								width: 210px
+
+	.section-vizitki
+		.section-wrap
+			.item-wrap
+				.item
+					.content-sect
+						.mini-player
+							&-bar
+								width: 210px
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
 	/**/
@@ -86,7 +104,11 @@
 			.about-text
 				padding: 30px 15px
 
-	.section-arhiv, .section-galereya
+	.page-mini-radio
+		padding-left: 15px
+		padding-right: 15px
+
+	.section-arhiv, .section-galereya, .section-vizitki, .section-setka, .section-prais
 		.section-wrap
 			padding: 0 15px 30px 15px
 
@@ -100,6 +122,13 @@
 				.item
 					width: 250px
 
+	.section-setka
+		.section-wrap
+			.item-wrap
+				.item
+					li
+						padding: 0 10px
+
 	.main-footer
 		.logo-wrap-radio, .copy
 			margin-bottom: 15px
@@ -112,6 +141,29 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
 	/**/
+
+	.mini-player
+		max-width: 295px
+		&-bar
+			width: 155px
+
+	.section-arhiv
+		.section-wrap
+			.audio-wrapper
+				.audio
+					.content-sect
+						.mini-player
+							&-bar
+								width: 155px
+
+	.section-vizitki
+		.section-wrap
+			.item-wrap
+				.item
+					.content-sect
+						.mini-player
+							&-bar
+								width: 155px
 
 
 /* Custom, iPhone Retina */

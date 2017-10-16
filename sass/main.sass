@@ -96,7 +96,9 @@ h3
 		&:hover
 			text-decoration: none
 
-.audioplayer
+/* Основной плеер */
+
+.main-player
 	position: relative
 	height: 58px
 	&-playpause
@@ -109,9 +111,9 @@ h3
 		left: 0
 		a
 			font-size: 0
-	.audioplayer-time-duration
+	.main-player-time-duration
 		display: none
-	.audioplayer-time-current
+	.main-player-time-current
 		color: #fff
 		font-size: 12px
 		line-height: 12px
@@ -173,12 +175,143 @@ h3
 					position: absolute
 					top: calc(50% - 4px)
 
-.audioplayer-stopped
-	.audioplayer-playpause
+.main-player-stopped
+	.main-player-playpause
 		background-image: url("/img/play.png")
-.audioplayer-playing
-	.audioplayer-playpause
+.main-player-playing
+	.main-player-playpause
 		background-image: url("/img/pause.png")
+
+/* Мини плеер */
+
+.mini-radio-wrap
+	padding: 15px 15px
+	.current-sont
+		font-size: 13px
+		color: #444444
+
+.page-mini-radio
+	border-bottom: 1px solid #e8e8e8
+	padding-left: 30px
+	padding-right: 30px
+	.current-sont
+		font-size: 13px
+		color: #444444
+.margins
+	margin-left: -15px
+	margin-right: -15px
+
+.mini-player
+	position: relative
+	height: 30px
+	background-color: #e8e8e8
+	max-width: 350px
+	&-playpause
+		background-repeat: no-repeat
+		width: 58px
+		height: 58px
+		cursor: pointer
+		position: absolute
+		top: 0
+		left: 0
+		a
+			font-size: 0
+	.mini-player-time-duration
+		display: none
+	.mini-player-time-current
+		color: #444444
+		font-size: 12px
+		font-size: 12px
+		line-height: 12px
+		position: absolute
+		right: 0
+		top: -18px
+	&-bar
+		width: 215px
+		height: 2px
+		display: inline-block
+		background-color: #bebebe
+		cursor: pointer
+		position: absolute
+		left: 45px
+		top: calc(50% - 1px)
+		&-played
+			height: 2px
+			background-color: #444444
+		&-handler
+			width: 8px
+			height: 8px
+			background-color: #444444
+			border-radius: .5em
+			position: absolute
+			top: calc(50% - 4px)
+	&-volume
+		cursor: pointer
+		&-button
+			position: absolute
+			right: 65px
+			top: calc(50% - 7px)
+			width: 16px
+			height: 14px
+			background-image: url("/img/sound-on-black.png")
+			a
+				font-size: 0
+		.off
+			background-image: url("/img/sound-off-black.png")
+			height: 16px
+			top: calc(50% - 8px)
+		&-adjust
+			position: absolute
+			right: 15px
+			top: calc(50% - 1px)
+			width: 40px
+			height: 2px
+			background-color: #bebebe
+			div
+				height: 2px
+				background-color: #bebebe
+				div
+					height: 2px
+					background-color: #444444
+				.volumeHandler
+					width: 8px
+					height: 8px
+					background-color: #444444
+					border-radius: .5em
+					position: absolute
+					top: calc(50% - 4px)
+
+.mini-player-stopped
+	.mini-player-playpause
+		width: 30px
+		height: 30px
+		background-color: #bebebe
+		a
+			width: 10px
+			height: 10px
+			border-style: solid
+			border-width: 7px 0 7px 10px
+			border-color: transparent transparent transparent #fff
+			display: block
+			margin: auto
+			margin-top: 7px
+
+.mini-player-playing
+	.mini-player-playpause
+		width: 30px
+		height: 30px
+		background-color: #bebebe
+		a
+			display: block
+			width: 10px
+			height: 10px
+			border-style: solid
+			border-width: 10px
+			border-style: double
+			border-width: 0px 0px 0px 10px
+			border-color: #fff
+			margin: auto
+			margin-top: 10px
 
 .img-responsive
 	display: block
@@ -550,14 +683,8 @@ h3
 						font-size: 14px
 						line-height: 25px
 						float: left
-					.time
-						float: right
-						color: #444444
-						font-size: 12px
-						line-height: 25px
 				.content-sect
-					height: 26px
-					background-color: #000
+					height: 30px
 					width: 100%
 		.rekl-wrap
 			margin-bottom: 30px
@@ -662,6 +789,201 @@ h3
 				text-align: center
 				max-width: 180px
 				margin: auto
+
+/********** Архив и Новости **********/
+
+.section-arhiv
+	.section-wrap
+		background-color: #FFF
+		padding: 0 30px 30px 30px
+		.form-search
+			position: relative
+			margin-bottom: 15px
+			.search-wrap
+				input
+					border: 1px solid #d3d3d3
+					outline: 0
+					text-indent: 10px
+					width: 100%
+					font-size: 14px
+					font-weight: 200
+					line-height: 30.5px
+					border-radius: .15em
+				a
+					display: block
+					width: 34.5px
+					height: 34.5px
+					position: absolute
+					right: 0
+					top: 0
+					background-color: $red
+					text-align: center
+					border-radius: .15em
+					i
+						color: #fff
+						line-height: 34.5px
+		.cat-select
+			margin-bottom: 30px
+			.selectize-control
+				height: 34.5px
+				.selectize-input
+					border: 1px solid #d3d3d3
+					width: 100%
+					border-radius: .15em
+					input
+						color: #bababa
+						font-size: 14px
+						font-weight: 200
+					&:after
+						top: 50%
+						right: 10px
+						border-color: $blue transparent transparent transparent
+		.audio-wrapper
+			h2
+				margin-bottom: 20px
+			.audio
+				margin-bottom: 20px
+				.top-sect
+					height: 14px
+					.title
+						color: $blue
+						font-size: 14px
+						line-height: 14px
+						float: left
+				.time-wrap
+					font-size: 12px
+					color: #b0b0b0
+					line-height: 12px
+					.icon-time
+						margin-right: 5px
+						font-size: 16px
+						line-height: 16px
+				.content-sect
+					height: 30px
+					width: 100%
+					.mini-player
+						max-width: 350px
+						.mini-player-time-current
+							top: -38px
+						&-bar
+							width: 145px
+
+/********** Визитки программ **********/
+
+.section-vizitki
+	.section-wrap
+		background-color: #FFF
+		padding: 0 30px 30px 30px
+		.item-wrap
+			margin-bottom: 30px
+			.item
+				.top-sect
+					.img-wrap
+						width: 50px
+						height: 50px
+						overflow: hidden
+						border-radius: 5em
+						display: inline-block
+						img
+							width: 100%
+							height: 100% /* Убрать */
+							//height: auto
+					.title
+						color: #444444
+						font-weight: bold
+						font-size: 14px
+						display: inline-block
+						vertical-align: top
+						margin: 0 0 0 15px
+						max-width: 170px
+						overflow: hidden
+						line-height: 19px
+				.content-sect
+					height: 30px
+					width: 100%
+					.mini-player
+						max-width: 350px
+						.mini-player-time-current
+							top: -38px
+						&-bar
+							width: 145px
+				.bottom-sect
+					color: #9e9e9e
+					font-size: 13px
+					line-height: 18px
+					margin-top: 5px
+
+/********** Сетка вещания **********/
+
+.section-setka, .section-prais
+	.section-wrap
+		background-color: #FFF
+		padding: 0 30px 30px 30px
+		.item-wrap
+			text-align: center
+			margin-bottom: 30px
+			.item
+				padding: 0
+				margin: 0
+				display: inline-block
+				font-size: 0
+				border-bottom: 1px solid #e8e8e8
+				li
+					display: inline-block
+					font-size: 14px
+					color: #444444
+					padding: 0 15px
+					line-height: 30px
+					cursor: pointer
+				.active
+					border-bottom: 2px solid $red
+		.prog-list
+			padding: 0
+			margin: 0
+			list-style-type: none
+			margin-bottom: 30px
+			li
+				font-size: 14px
+				color: #444444
+				b
+					margin-right: 15px
+
+/********** Прайс **********/
+
+.section-setka, .section-prais
+	.section-wrap
+		.prise-table
+			width: 100%
+			border-collapse: collapse
+			margin-bottom: 30px
+			tr
+				text-align: center
+				font-size: 14px
+				line-height: 19px
+				&:nth-child(2n+2)
+					background-color: #e8e8e8
+				td
+					padding: 10px 0
+		.descr-t
+			font-size: 12px
+			line-height: 17px
+			color: #959595
+			margin: 0
+			padding: 0
+			margin-top: 35px
+			margin-bottom: 30px
+			margin-left: 15px
+			li
+				margin-bottom: 5px
+				&:last-child
+					margin: 0
+		.inner-text
+			font-size: 14px
+			color: #444444
+			line-height: 19px
+			margin: 0
+			margin-bottom: 30px
+
 
 /********** Видео галерея **********/
 
@@ -778,85 +1100,8 @@ h3
 			.od
 				background-color: #f58220
 		.google-map
+			width: 100%
 			max-height: 350px
 			overflow: hidden
-
-/********** Архив **********/
-
-.section-arhiv
-	.section-wrap
-		background-color: #FFF
-		padding: 0 30px 30px 30px
-		.form-search
-			position: relative
-			margin-bottom: 15px
-			.search-wrap
-				input
-					border: 1px solid #d3d3d3
-					outline: 0
-					text-indent: 10px
-					width: 100%
-					font-size: 14px
-					font-weight: 200
-					line-height: 30.5px
-					border-radius: .15em
-				a
-					display: block
-					width: 34.5px
-					height: 34.5px
-					position: absolute
-					right: 0
-					top: 0
-					background-color: $red
-					text-align: center
-					border-radius: .15em
-					i
-						color: #fff
-						line-height: 34.5px
-		.cat-select
-			margin-bottom: 30px
-			.selectize-control
-				height: 34.5px
-				.selectize-input
-					border: 1px solid #d3d3d3
-					width: 100%
-					border-radius: .15em
-					input
-						color: #bababa
-						font-size: 14px
-						font-weight: 200
-					&:after
-						top: 50%
-						right: 10px
-						border-color: $blue transparent transparent transparent
-		.audio-wrapper
-			h2
-				margin-bottom: 20px
-			.audio
-				margin-bottom: 20px
-				.top-sect
-					height: 14px
-					.title
-						color: $blue
-						font-size: 14px
-						line-height: 14px
-						float: left
-					.time
-						float: right
-						color: #444444
-						font-size: 12px
-						line-height: 14px
-				.time-wrap
-					font-size: 12px
-					color: #b0b0b0
-					line-height: 12px
-					.icon-time
-						margin-right: 5px
-						font-size: 16px
-						line-height: 16px
-				.content-sect
-					height: 26px
-					background-color: #000
-					width: 100%
 
 @import "media" // Всегда в конце
