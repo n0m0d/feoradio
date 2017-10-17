@@ -43,6 +43,7 @@
 				barHandler:		'bar-handler',
 				volume:		 	'volume',
 				volumeButton: 	'volume-button',
+				bigVolumeButton:'big-volume-button',
 				volumeAdjust: 	'volume-adjust',
 				noVolume: 		'novolume',
 				muted: 			'muted',
@@ -83,7 +84,7 @@
 			if( isSupport )
 			{
 				thePlayer.find( 'audio' ).css( { 'width': 0, 'height': 0, 'visibility': 'hidden' } );
-				thePlayer.append( '<div class="' + cssClass.time + ' ' + cssClass.timeCurrent + '"></div><div class="' + cssClass.bar + '"><div class="' + cssClass.barLoaded + '"></div><div class="' + cssClass.barPlayed + '"></div><div class="' + cssClass.barHandler + '"></div></div><div class="' + cssClass.time + ' ' + cssClass.timeDuration + '"></div><div class="' + cssClass.volume + '"><div class="' + cssClass.volumeButton + '" title="' + params.strVolume + '"><a href="#">' + params.strVolume + '</a></div><div class="' + cssClass.volumeAdjust + '"><div><div class="volumeLine"></div><div class="volumeHandler"></div></div></div></div>' );
+				thePlayer.append( '<div class="' + cssClass.time + ' ' + cssClass.timeCurrent + '"></div><div class="' + cssClass.bar + '"><div class="' + cssClass.barLoaded + '"></div><div class="' + cssClass.barPlayed + '"></div><div class="' + cssClass.barHandler + '"></div></div><div class="' + cssClass.time + ' ' + cssClass.timeDuration + '"></div><div class="' + cssClass.volume + '"><div class="' + cssClass.volumeButton + '" title="' + params.strVolume + '"><a href="#">' + params.strVolume + '</a></div><div class="' + cssClass.volumeAdjust + '"><div><div class="volumeLine"></div><div class="volumeHandler"></div></div></div></div><div class="' + cssClass.bigVolumeButton + '"><span><i class="fa fa-volume-up on" aria-hidden="true"></i><i class="fa fa-volume-off off" aria-hidden="true"></i></span></div>' );
 
 				var theBar			  = thePlayer.find( '.' + cssClass.bar ),
 					barPlayed	 	  = thePlayer.find( '.' + cssClass.barPlayed ),
@@ -92,6 +93,7 @@
 					timeCurrent		  = thePlayer.find( '.' + cssClass.timeCurrent ),
 					timeDuration	  = thePlayer.find( '.' + cssClass.timeDuration ),
 					volumeButton	  = thePlayer.find( '.' + cssClass.volumeButton ),
+					bigVolumeButton	  = thePlayer.find( '.' + cssClass.bigVolumeButton ),
 					volumeAdjuster	  = thePlayer.find( '.' + cssClass.volumeAdjust + ' > div' ),
 					volumeDefault	  = 0,
 					adjustCurrentTime = function( e )
@@ -102,7 +104,7 @@
 					adjustVolume = function( e )
 					{
 						theRealEvent	= isTouch ? e.originalEvent.touches[ 0 ] : e;
-						theAudio.volume = Math.abs( ( theRealEvent.pageX - ( volumeAdjuster.offset().left + volumeAdjuster.width() ) ) / volumeAdjuster.width() );
+						theAudio.volume = Math.abs( ( theRealEvent.pageX - volumeAdjuster.offset().left ) / volumeAdjuster.width() );
 					},
 					updateLoadBar = function()
 					{
@@ -161,6 +163,22 @@
 				});
 
 				volumeButton.on( 'click', function()
+				{
+					if( thePlayer.hasClass( cssClass.muted ) )
+					{
+						thePlayer.removeClass( cssClass.muted );
+						theAudio.volume = volumeDefault;
+					}
+					else
+					{
+						thePlayer.addClass( cssClass.muted );
+						volumeDefault = theAudio.volume;
+						theAudio.volume = 0;
+					}
+					return false;
+				});
+
+				bigVolumeButton.on( 'click', function()
 				{
 					if( thePlayer.hasClass( cssClass.muted ) )
 					{

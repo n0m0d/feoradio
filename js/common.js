@@ -40,6 +40,12 @@ $(function() {
 
 	$(".main-player-volume-button").on("click", function() {
 		$(this).toggleClass("off");
+		$(".main-player-big-volume-button span").toggleClass("off");
+	});
+
+	$(".main-player-big-volume-button").on("click", function() {
+		$(".main-player-big-volume-button span").toggleClass("off");
+		$(".main-player-volume-button").toggleClass("off");
 	});
 
 	$(".mini-player-volume-button").on("click", function() {
